@@ -1,0 +1,825 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Gruppo&family=Michroma&family=Orbitron:wght@400..900&family=Pixelify+Sans:wght@400..700&family=Tektur:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Gruppo&family=Jura:wght@300..700&family=Michroma&family=Orbitron:wght@400..900&family=Pixelify+Sans:wght@400..700&family=Tektur:wght@400..900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #000000;
+  color: #ffffff;
+  font-family: Jura;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+}
+
+.title_1{
+  font-family: 'Jura', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+} 
+
+.menu_1 a{
+  font-family: 'Jura', sans-serif;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.menu_1 a:hover{
+  text-shadow: 1px 1px 20px #5eec7d;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 50px;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Michroma', cursive;
+  font-size: 24px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.logo:hover {
+  text-shadow: 1px 1px 20px #5eec7d;
+}
+
+.logo::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #5eec7d;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.logo:hover::after {
+  transform: scaleX(1);
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  font-family: 'Jura', sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 400;
+}
+
+nav a:hover {
+  text-shadow: 1px 1px 20px #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Добавляем кнопку меню */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #ffffff;
+  background: none;
+  border: none;
+  padding: 5px;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+  color: #5eec7d;
+  transform: scale(1.1);
+}
+
+/* Адаптивные стили */
+@media screen and (max-width: 768px) {
+  header {
+    padding: 15px 20px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border-top: 1px solid rgba(94, 236, 125, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  nav.active {
+    display: flex;
+    animation: slideDown 0.3s ease;
+  }
+
+  nav a {
+    font-size: 18px;
+    padding: 10px 20px;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+
+  nav a:hover {
+    background: rgba(94, 236, 125, 0.1);
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Стили для очень маленьких экранов */
+@media screen and (max-width: 480px) {
+  header {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  nav a {
+    font-size: 16px;
+  }
+}
+
+/* Стили для планшетов */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  header {
+    padding: 15px 30px;
+  }
+
+  nav {
+    gap: 20px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+}
+
+/* Стили для секции продуктов */
+.products {
+  padding: 100px 50px 50px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid rgba(94, 236, 125, 0.1);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(94, 236, 125, 0.2);
+  border-color: rgba(94, 236, 125, 0.3);
+}
+
+.product-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  border-radius: 18px;
+  margin-bottom: 15px;
+  background-color: transparent;
+}
+
+.product-card h3 {
+  font-family: 'Jura', sans-serif;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #ffffff;
+  flex-grow: 1;
+  font-weight: 500;
+}
+
+.product-card .price {
+  font-family: 'Jura', sans-serif;
+  font-size: 16px;
+  color: #5eec7d;
+  margin-top: auto;
+  font-weight: 500;
+}
+
+/* Стили для модального окна */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2000;
+  backdrop-filter: blur(5px);
+  overflow-y: auto;
+}
+
+.modal-content {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.9);
+  margin: 5% auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 10px;
+  border: 1px solid rgba(94, 236, 125, 0.2);
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #5eec7d;
+}
+
+.modal-body {
+  padding: 20px 0;
+}
+
+.modal-image {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.modal-title {
+  font-family: 'Jura', sans-serif;
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.modal-price {
+  font-family: 'Jura', sans-serif;
+  font-size: 20px;
+  color: #5eec7d;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.modal-description {
+  font-family: 'Jura', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ffffff;
+  font-weight: 400;
+}
+
+/* Адаптивные стили для модального окна */
+@media screen and (max-width: 768px) {
+  .modal-content {
+    margin: 10% auto;
+    width: 95%;
+  }
+
+  .modal-title {
+    font-size: 20px;
+  }
+
+  .modal-price {
+    font-size: 18px;
+  }
+
+  .modal-description {
+    font-size: 14px;
+  }
+}
+
+/* Стили для кнопки добавления товара */
+.add-product-container {
+  padding: 100px 50px 20px;
+  text-align: right;
+}
+
+.add-product-btn {
+  background: rgba(94, 236, 125, 0.2);
+  border: 1px solid #5eec7d;
+  color: #5eec7d;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Michroma', cursive;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.add-product-btn:hover {
+  background: rgba(94, 236, 125, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Стили для формы добавления товара */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-family: 'Michroma', cursive;
+  color: #ffffff;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(94, 236, 125, 0.2);
+  border-radius: 5px;
+  color: #ffffff;
+  font-family: 'Michroma', cursive;
+}
+
+.form-group textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.submit-btn {
+  background: #5eec7d;
+  color: #000000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Michroma', cursive;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+span{
+  font-family: 'Michroma', cursive;
+}
+
+.submit-btn:hover {
+  background: #4cd86c;
+  transform: translateY(-2px);
+}
+
+/* Адаптивные стили для формы */
+@media screen and (max-width: 768px) {
+  .add-product-container {
+    padding: 80px 20px 20px;
+  }
+
+  .add-product-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px; /* Предотвращает масштабирование на iOS */
+  }
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media screen and (max-width: 768px) {
+  .products {
+    padding: 80px 15px 30px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 0;
+  }
+
+  .product-card {
+    padding: 8px;
+    min-width: 0;
+  }
+
+  .product-card img {
+    height: 250px;
+  }
+
+  .product-card h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .product-card .price {
+    font-size: 16px;
+  }
+}
+
+/* Стили для очень маленьких экранов */
+@media screen and (max-width: 480px) {
+  .products {
+    padding: 70px 10px 20px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .product-card img {
+    height: 220px;
+  }
+}
+
+/* Стили для главной страницы */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1920x1080');
+    background-size: cover;
+    background-position: center;
+    padding: 0 20px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-family: 'Jura', sans-serif;
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.hero p {
+    font-family: 'Jura', sans-serif;
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: rgba(94, 236, 125, 0.2);
+    border: 1px solid #5eec7d;
+    color: #5eec7d;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Jura', sans-serif;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.cta-button:hover {
+    background: rgba(94, 236, 125, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Стили для секции features */
+.features {
+    padding: 100px 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.features-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.features h2 {
+    font-family: 'Jura', sans-serif;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(94, 236, 125, 0.1);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(94, 236, 125, 0.3);
+    box-shadow: 0 5px 15px rgba(94, 236, 125, 0.2);
+}
+
+.feature-card h3 {
+    font-family: 'Jura', sans-serif;
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.feature-card p {
+    font-family: 'Jura', sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* Стили для страницы About */
+.about-section {
+    padding: 100px 50px 50px;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-container h1 {
+    font-family: 'Jura', sans-serif;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-text p {
+    font-family: 'Jura', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item h3 {
+    font-family: 'Jura', sans-serif;
+    font-size: 36px;
+    color: #5eec7d;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.stat-item p {
+    font-family: 'Jura', sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Стили для страницы Contact */
+.contact-section {
+    padding: 100px 50px 50px;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-container h1 {
+    font-family: 'Jura', sans-serif;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+}
+
+.contact-info {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(94, 236, 125, 0.1);
+}
+
+.contact-info h2 {
+    font-family: 'Jura', sans-serif;
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.info-item {
+    margin-bottom: 20px;
+}
+
+.info-item h3 {
+    font-family: 'Jura', sans-serif;
+    font-size: 18px;
+    color: #5eec7d;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.info-item p {
+    font-family: 'Jura', sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.contact-form {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(94, 236, 125, 0.1);
+}
+
+/* Адаптивные стили для новых страниц */
+@media screen and (max-width: 768px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .about-content,
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.social-links {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-links h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-family: 'Jura', sans-serif;
+    font-weight: 500;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.social-icon:hover {
+    color: #00ff88;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.social-icon i {
+    font-size: 1.5rem;
+}
+
+.social-icon span {
+    font-size: 1rem;
+    font-family: 'Jura', sans-serif;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .social-icons {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .social-icon {
+        padding: 0.8rem 1.2rem;
+    }
+}

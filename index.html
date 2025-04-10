@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check Point - Fashion Brand</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo">Check Point</a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="products.html">Products</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <button class="menu-toggle">☰</button>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Modern Fashion</h1>
+      <p>Creating stylish and comfortable pieces for your wardrobe</p>
+      <a href="products.html" class="cta-button">View Collection</a>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="features-container">
+      <h2>Why Choose Us?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Quality</h3>
+          <p>We use only the finest materials and modern production technologies</p>
+        </div>
+        <div class="feature-card">
+          <h3>Style</h3>
+          <p>We create collections that reflect current fashion trends while remaining practical</p>
+        </div>
+        <div class="feature-card">
+          <h3>Comfort</h3>
+          <p>All pieces are designed with maximum wearability in mind</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="products">
+    <div class="products-container">
+      <h2>Popular Products</h2>
+      <div class="products-grid" id="productsGrid">
+        <!-- Products will be dynamically added here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Модальное окно для просмотра товара -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-body">
+        <img src="" alt="Product Image" class="modal-image">
+        <h2 class="modal-title"></h2>
+        <p class="modal-price"></p>
+        <p class="modal-description"></p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="code.js"></script>
+</body>
+</html>
