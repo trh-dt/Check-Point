@@ -22,13 +22,13 @@ let products = {
         title: "Slim Fit Jeans",
         price: "$79.99",
         description: "Classic slim fit jeans made from stretch denim. Provides comfort and accentuates your silhouette.",
-        image: "iloveimg-compressed/63450E6F-F84A-44EE-B4DC-21B4200AAB6F.png"
+        image: "iloveimg-compressed/81E0E83F-ED1B-4D2F-A7BF-9FF8443AFA49.png"
     },
     5: {
         title: "Leather Backpack",
         price: "$129.99",
         description: "Stylish backpack made from genuine leather. Features multiple compartments and adjustable straps.",
-        image: "iloveimg-compressed/019F724B-4A8E-4FFB-A595-E6711FAE6F6E.png"
+        image: "iloveimg-compressed/4A3F6886-7B6C-420A-83ED-664119669F5F.png"
     },
     6: {
         title: "Wool Sweater",
@@ -47,7 +47,8 @@ let products = {
         price: "$199.99",
         description: "Classic leather jacket made from genuine leather. Features modern cut and metal hardware.",
         image: "iloveimg-compressed/470C7FFD-B1EC-427D-9C1D-F7C425209489.png"
-    }
+    },
+    
 };
 
 // Функция для добавления нового товара
