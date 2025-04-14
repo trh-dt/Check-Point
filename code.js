@@ -1,3 +1,9 @@
+import config from './config.js';
+
+// Тестовый вывод конфигурации
+console.log('API URL:', config.API_URL);
+console.log('App Title:', config.APP_TITLE);
+
 // Product data
 let products = {
     1: {
